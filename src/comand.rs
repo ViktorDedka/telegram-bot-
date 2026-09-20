@@ -24,7 +24,12 @@ pub fn comad_otvet1(text:&str) -> String {
         "/help" => "hello to comand: 
         /start,
         /help,
-        /info".to_string(),
+        /info,
+        /author, ".to_string(),
+
+        "/info" => "ето бот написан на чистом раст без всяких фреймворков и библиотек".to_string(),
+        "/author" => "Автор бота: Виктор Дедка/@kitty_rec".to_string(),
+
         _ => format!("User message: ({})", text),
     }
 }
