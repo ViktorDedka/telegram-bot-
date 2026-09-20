@@ -2,9 +2,13 @@
 mod comand; 
 mod struct1; 
 use struct1::Telegram;
+use comand::message_otvet;
+use comand::comad_otvet1;
+
+
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let token = "token";
+    let token = "token_You";
     let mut offset =0;
     println!("bot start {}>.....", offset);
 
@@ -24,6 +28,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if let Some(msg) = &update.message {
             if let Some(txt) = &msg.text {
                 println!("{}", txt);
+                let answer = comad_otvet1(txt);
+                
+                message_otvet(msg.chat.id, &answer, token)?;
+               
 
             }
         }
